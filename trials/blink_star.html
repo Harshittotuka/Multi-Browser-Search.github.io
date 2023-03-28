@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background-color: black;
+}
+.star {
+ color: yellow;
+ animation-name: blink;
+ animation-duration: 1s;
+animation-iteration-count: infinite;
+font-size: 50px;
+}
+@keyframes blink {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+    </style>
+</head>
+<body>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+    <div class="star">*</div>
+
+
+    <script>
+        // variables declarations
+var i;
+var star = document.getElementsByClassName("star").length;
+var length = document.documentElement.clientWidth;
+// we use for loop to assign unique random values for the x position and animation speed
+for (i = 0; i < star; i++) {
+  x = Math.floor(Math.random() * length);
+  y = Math.floor(Math.random() * 10);
+document.getElementsByClassName("star")[i].style.transform = "translateX(" + x + "px)";
+document.getElementsByClassName("star")[i].style.animationDuration = y + "s";  
+} 
+    </script>
+</body>
+</html>

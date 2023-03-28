@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A website from where you can access various search Browsers on a single click. Just a basic html code along with CSS." />
+  <title>Multi Browser Search</title>
+
+  <link rel="stylesheet" media="screen and (min-width: 1100px)" href="dekstop.css">
+  <link rel="stylesheet" media="screen and (min-width: 1100px)" href="dekstop_about.css">
+
+  <link rel="stylesheet" media="screen and (max-width: 1100px)" href="phone.css">
+  <style>
+    @import url("https://fonts.Googleapis.com/css2?family=Poppins&display=swap");
+  </style>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <!-- -------fa icons---------- -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W3P4P5XPX4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W3P4P5XPX4');
+</script>
+
+
+</head>
+
+<body >
+
+
+    
+  <div class="container">
+    <a class="s_icon" href="https://www.facebook.com/harshit.totuka.5" target="_blank">
+    <i class="fab fa-facebook-f" title="FACEBOOK"></i>
+    </a>
+    <a class="s_icon" href="https://www.instagram.com/_harshit_totuka/" target="_blank">
+    <i class="fab fa-instagram" title="INSTAGRAM"></i>
+    </a>
+    <a class="s_icon" href="https://www.linkedin.com/in/harshit-totuka-753735216" target="_blank">
+    <i class="fab fa-linkedin-in" title="LINKED-IN"></i>
+    </a>
+    <a class="s_icon"href="mailto:harshittotuka1@gmail.com" target="_blank">
+    <i class="fas fa-envelope" title="GMAIL"></i>
+    </a>
+  </div>
+
+
+
+  <div class="hd" id="ttle">
+    MULTI BROWSER<br>
+    SEARCH
+    <!-- <H1 class="se">SEARCH</H1> -->
+  </div>
+
+
+
+  <div class="phbg"></div>
+
+  <form target="_blank">
+    <div> <input type="text" value="" placeholder="enter your search.." class="s_box" id="sb" name="q"  onfocus="this.value=''" onclick="sbar()" >
+      <!-- <a href="#" class="close" id="cl" onclick="clear">X</a> -->
+    </div>
+
+    <div class="wrapper" id="wrp">
+
+      <div class="icon Google">
+        <div class="tooltip">Google</div>
+        <span>
+          <i class="fab fa-Google-f">
+            <button class="btn g" formaction="https://www.google.com/search"></button>
+          </i>
+        </span>
+      </div>
+
+      <div class="icon Bing">
+        <div class="tooltip">Bing</div>
+        <span><i class="fab "> <button class="btn b"
+              formaction="https://www.bing.com/search"></button></i></span>
+      </div>
+
+      <div class="icon Yahoo">
+        <div class="tooltip">Yahoo</div>
+        <span><i class="fab"> <button class="btn y"
+              formaction="https://www.yahoo.com/search"></button></i></span>
+      </div>
+
+
+      <div class="icon excite">
+        <div class="tooltip ">excite</div>
+        <span><i class="fab"> <button class="btn ex"
+              formaction="https://results.excite.com/serp"></button></i></span>
+      </div>
+
+
+      <div class="icon youtube">
+        <div class="tooltip">Youtube</div>
+        <span><i class="fab "> <button class="btn yt"
+              formaction="https://www.youtube.com/search"></button></i></span>
+      </div>
+
+
+
+      <div class="icon ask">
+        <div class="tooltip">Ask.com</div>
+        <span><i class="fab"> <button class="btn ak" formaction="https://www.ask.com/web"></button></i></span>
+      </div>
+
+
+
+      <div class="icon aol">
+        <div class="tooltip">AOL</div>
+        <span><i class="fab"> <button class="btn al" formaction="https://search.aol.com/aol/search"></button></i></span>
+      </div>
+
+      <div class="icon eco">
+        <div class="tooltip">ECOSIA</div>
+        <span><i class="fab"> <button class="btn ec" formaction="https://www.ecosia.org/search"></button></i></span>
+      </div>
+
+
+      <div class="icon gb">
+        <div class="tooltip">GIGABLAST</div>
+        <span><i class="fab"> <button class="btn g_b"
+              formaction="https://www.gigablast.com/search?c=main&qlangcountry=en-us&"></button></i></span>
+      </div>
+
+
+
+
+
+
+      <script>
+        
+        function sbar() {
+          var x = window.matchMedia("(max-width: 1100px)");
+          if (x.matches) { 
+            document.body.style.backgroundColor = "wheat";
+            document.body.style.backgroundImage="none";
+          
+
+            document.getElementById("ttle").style.position = "absolute";
+            document.getElementById("ttle").style.textAlign = "center";
+            document.getElementById("ttle").style.width = "100%";
+            document.getElementById("ttle").style.fontSize = "3.5vh";
+            document.getElementById("ttle").style.lineHeight = "1";
+            document.getElementById("ttle").style.marginTop = "0";
+            document.getElementById("ttle").style.top = "0";
+            document.getElementById("ttle").style.left = "0";
+
+            document.getElementById("wrp").style.visibility ="visible";
+            document.getElementById("wrp").style.position ="absolute";
+            document.getElementById("wrp").style.top ="6vh";
+            document.getElementById("wrp").style.width ="100%";
+            document.getElementById("wrp").style.left ="0";
+            document.getElementById("wrp").style.height ="auto";
+            document.getElementById("wrp").style.boxSizing ="border-box";
+            document.getElementById("wrp").style.padding ="20px 20px";
+
+            document.getElementById("sb").style.position ="absolute";
+           document.getElementById("sb").style.top ="9vh";
+           document.getElementById("sb").style.width ="80%";
+           document.getElementById("sb").style.left ="10vw";
+           document.getElementById("sb").style.height ="40px";
+         
+         
+           document.getElementById("sb").style.border="2px solid black";
+  
+          } 
+} 
+
+
+function back(){
+  document.getElementById("wrp").style.visibility ="none";
+}
+      </script>
+
+  </form>
+</body>
+
+</html>

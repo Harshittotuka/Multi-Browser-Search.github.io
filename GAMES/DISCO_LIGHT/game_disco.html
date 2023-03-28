@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/GAMES/DISCO_LIGHT/disco_button.css">
+    <!-- <link id="style" rel="stylesheet" href="/GAMES/lights.css"> -->
+    <style>
+        body {
+  background: linear-gradient(to right, #f857a6, #ff5858);
+}
+#bt{
+  border: 2px solid black;
+}
+    </style>
+</head>
+<body>
+  <div class="wrapper"></div>
+<div class="container"><a id="bt" class="button is-play" href="#">
+    <div class="button-outer-circle has-scale-animation"></div>
+    <div class="button-outer-circle has-scale-animation has-delay-short"></div>
+    <div class="button-icon is-play">
+      <svg height="100%" width="100%" fill="#f857a6">
+        <polygon class="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
+        <path class="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#f857a6" stroke-width="1"></path>
+      </svg>
+    </div></a></div>
+</body>
+<script>
+
+$(function () {
+            $('#bt').click(function () {
+                $('link#style').attr('href', '/GAMES/lights.css');
+            });
+ 
+        });
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.Googleapis.com/css2?family=Poppins&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    *:focus,
+    *:active {
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-family: "Poppins", sans-serif;
+      place-items: center;
+      background: linear-gradient(315deg, #ffffff, #d7e1ec);
+    }
+
+    .s_box {
+      position: fixed;
+      height: 40px;
+      margin-bottom: 10px;
+      top: 55%;
+      border: 4px solid red;
+      padding-left: 15px;
+      width: 85vh;
+      left: 29vw;
+      border-top: none;
+      border-right: none;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+
+      /* right: 30vw; */
+    }
+
+    .wrapper {
+      display: inline-flex;
+      /* border: 2px solid red; */
+      position: relative;
+      top: 140px;
+      left: -1.5vw;
+    }
+
+    .wrapper .icon {
+      position: relative;
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 15px;
+      margin: 20px;
+      width: 80px;
+      height: 80px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .wrapper .tooltip {
+      position: absolute;
+      top: 0;
+      font-size: 14px;
+      background-color: #ffffff;
+      color: #ffffff;
+      padding: 5px 8px;
+      border-radius: 5px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .wrapper .tooltip::before {
+      position: absolute;
+      content: "";
+      height: 8px;
+      width: 8px;
+      background-color: #ffffff;
+      bottom: -3px;
+      left: 50%;
+      transform: translate(-50%) rotate(45deg);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .wrapper .icon:hover .tooltip {
+      top: -45px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .wrapper .icon:hover span,
+    .wrapper .icon:hover .tooltip {
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .wrapper .Google:hover,
+    .wrapper .Google:hover .tooltip,
+    .wrapper .Google:hover .tooltip::before {
+      background-color: #3b5999;
+      color: #ffffff;
+      box-shadow: 0px 8px 20px 1px black;
+    }
+
+    .wrapper .Bing:hover,
+    .wrapper .Bing:hover .tooltip,
+    .wrapper .Bing:hover .tooltip::before {
+      background-color: #46c1f6;
+      color: #ffffff;
+      box-shadow: 0px 8px 20px 1px black;
+    }
+
+    .wrapper .Yahoo:hover,
+    .wrapper .Yahoo:hover .tooltip,
+    .wrapper .Yahoo:hover .tooltip::before {
+      background-color: #e1306c;
+      color: #ffffff;
+      box-shadow: 0px 8px 20px 1px black;
+    }
+
+    .wrapper .excite:hover,
+    .wrapper .excite:hover .tooltip,
+    .wrapper .excite:hover .tooltip::before {
+      background-color: #2bd16b;
+      color: #ffffff;
+      box-shadow: 0px 8px 20px 1px black;
+    }
+
+    .wrapper .youtube:hover,
+    .wrapper .youtube:hover .tooltip,
+    .wrapper .youtube:hover .tooltip::before {
+      background-color: #de463b;
+      color: #ffffff;
+      box-shadow: 0px 8px 20px 1px black;
+    }
+
+    .btn {
+      width: 50px;
+      border-radius: 50%;
+      height: 50px;
+      border: none;
+      background-color: transparent;
+
+    }
+
+
+
+    body {
+      background-color: rgba(51, 51, 51, 0.356);
+      height: 100vh;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      position: relative;
+    }
+
+
+    p {
+      /* background-color: rgba(197, 238, 17, 0.794); */
+      background: #3494E6;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #EC6EAD, #3494E6);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      color: black;
+      font-size: 3rem;
+      font-weight: bolder;
+      /* font-family:sans-serif; */
+      border: 0.1rem solid #fff;
+      border-radius: 2rem;
+      text-align: center;
+      width: 40%;
+      height: 140px;
+      left: 28.7%;
+      top: 180px;
+
+      animation: p 1s infinite alternate;
+      box-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 10px #506ae2,
+        0 0 20px #1b088a, 0 0 50px #120369, inset 0 0 0.8rem #506ae2;
+
+    }
+
+
+
+    @keyframes p {
+
+      0%,
+      100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d43232,
+          0 0 40px #d32525, 0 0 50px #9b0909;
+      }
+
+      50% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #d43232,
+          0 0 40px #d32525, 0 0 50px #9b0909;
+      }
+    }
+
+
+    /* Flashlight Overlay */
+    :root {
+      /* cursor: none; */
+      --cursorX: 92vw;
+      --cursorY: 87vh;
+    }
+
+    :root::after {
+      z-index: 2;
+      
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      pointer-events: none;
+      background: radial-gradient(circle 5vmax at var(--cursorX) var(--cursorY),
+          rgba(0,0,0,0) 0%,
+    rgba(0,0,0,.5) 80%,
+    rgba(0,0,0,.95) 100%
+        )
+    }
+
+    /* ------------------GIFT-------------- */
+
+    .gift {
+
+      background-color: transparent;
+      border-radius: 10px;
+      position: absolute;
+      z-index: 5;
+      top: 100px;
+      left: 100px;
+      background-image: url("giftx24.png");
+      height: 25px;
+      background-repeat: no-repeat;
+      width: 25px;
+      /* border: 2px solid red; */
+    }
+
+    .gift:hover {
+      box-shadow: 0px 0px 20px 5px black;
+    }
+
+    .base {
+      /* background-color: red; */
+      height: 100vh;
+      /* padding:0px ; */
+      margin: 0%;
+      width: 99vw;
+      /* border: 2px solid black; */
+      position: fixed;
+      margin-top: -398px;
+      margin-left: -360px;
+    }
+
+    body {
+      background-color: #c4c4c4;
+
+    }
+
+    .tx {
+      z-index: 4;
+      position: absolute;
+      top: -100px;
+      right: 50%;
+      transform: translate(50%, -50%);
+      text-transform: uppercase;
+      font-family: verdana;
+      font-size: 100px;
+      font-weight: 700;
+      color: #f5f5f5;
+      text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+        10px 18px 6px rgba(217, 255, 23, 0.4),
+        10px 22px 10px rgba(217, 255, 4, 0.2),
+        10px 25px 35px rgba(217, 255, 0, 0.2),
+        10px 30px 60px rgba(217, 255, 0, 0.4);
+      transition: all 0.5s ease-in;
+    }
+
+
+    /* ........result box.................. */
+    .result {
+      width: 200px;
+      height: 150px;
+      /* padding: 10px; */
+      /* background-color: red; */
+      background-color: #f7b42c;
+      background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+
+      border: 20px solid rgba(0, 0, 0, 0.842);
+      border-radius: 50px;
+      position: relative;
+      right: -300px;
+      bottom: -100px;
+    }
+
+    .dis {
+
+      box-shadow: -1px 0px 4px 2px black;
+      position: absolute;
+      z-index: 5;
+      top: 60px;
+      width: 100px;
+      left: 33px;
+      height: 35px;
+      border: 4px solid black;
+      border-top: none;
+      border-right: none;
+      border-radius: 20px;
+      box-sizing: border-box;
+      padding-left: 25%;
+      font-size: 30px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: bolder;
+      text-shadow: 2px 2px #a7ec07;
+    }
+
+    .txt {
+      position: relative;
+      /* border: 2px solid yellow; */
+      top: 15px;
+      text-shadow: 2px 2px yellow;
+      letter-spacing: 0.5px;
+      left: 20px;
+      font-family: fantasy;
+    }
+
+    #t1 {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <div>
+    <p>Multi BROWSER <br>
+      search
+
+    </p>
+
+  </div>
+
+  <form class="back" target="_blank">
+    <div> <input type="text" placeholder="enter your search.." class="s_box" name="q"></div>
+    <div class="wrapper">
+
+      <div class="icon Google">
+        <div class="tooltip">Google</div>
+        <span>
+          <i class="fab fa-Google-f">
+            <button class="btn" formaction="https://www.google.com/search?q=">g</button>
+          </i>
+        </span>
+      </div>
+
+      <div class="icon Bing">
+        <div class="tooltip">Bing</div>
+        <span><i class="fab fa-Bing"> <button class="btn" formaction="https://www.bing.com/search">B</button></i></span>
+      </div>
+
+      <div class="icon Yahoo">
+        <div class="tooltip">Yahoo</div>
+        <span><i class="fab fa-Yahoo"> <button class="btn"
+              formaction="https://www.yahoo.com/search">Y</button></i></span>
+      </div>
+
+
+      <div class="icon excite">
+        <div class="tooltip t_b">excite</div>
+        <span><i class="fab fa-excite"> <button class="btn"
+              formaction="https://results.excite.com/serp">E</button></i></span>
+      </div>
+
+
+      <div class="icon youtube">
+        <div class="tooltip">Youtube</div>
+        <span><i class="fab fa-youtube"> <button class="btn"
+              formaction="https://www.youtube.com/search">Y</button></i></span>
+      </div>
+
+
+
+
+
+      <!-- .......IMAGES........................
+      <div class="icon CC">
+        <div class="tooltip">CC search</div>
+        <span><i class="fab fa-CC"> <button class="btn" formaction="https://search.creativecommons.org/search">C</button></i></span>
+      </div> -->
+
+  </form>
+
+
+  <span class="tx" id="t">FIND THE HIDDEN GIFTS</span>
+
+  <span class="tx" id="t1">you won</span>
+
+
+
+
+
+
+
+  <section class="base">
+    <div class="gift" id="g1" onclick="g1()"></div>
+    <div class="gift" id="g2" onclick="g2()"></div>
+    <div class="gift" id="g3" onclick="g3()"></div>
+    <div class="gift" id="g4" onclick="g4()"></div>
+    <div class="gift" id="g5" onclick="g5()"></div>
+    <div class="gift" id="g6" onclick="g6()"></div>
+    <div class="gift" id="g7" onclick="g7()"></div>
+    <div class="gift" id="g8" onclick="g8()"></div>
+    <div class="gift" id="g9" onclick="g9()"></div>
+
+
+  </section>
+
+  
+  <div class="result">
+    <h1 class="txt">Gifts Left</h1>
+
+    <input type="text" id="v0" value="0" class="dis">
+  </div>
+
+  <script>
+
+    var d = document.getElementById("v0");
+
+    function hide() {
+      document.getElementById("t").style.display = "none";
+    }
+
+    function reload(){
+      location.reload();
+    }
+    function display() {
+      document.getElementById("t1").style.display = "block";
+      setTimeout(reload,10000);
+
+    }
+    setTimeout(hide,2000);
+
+
+
+
+    var counter = 0;
+
+    function g1() {
+
+      document.getElementById("g1").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      
+      }
+    }
+
+    function g2() {
+
+      document.getElementById("g2").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+        
+      }
+    }
+
+    function g3() {
+
+      document.getElementById("g3").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      }
+    }
+
+    function g4() {
+
+      document.getElementById("g4").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      }
+    }
+
+    function g5() {
+
+      document.getElementById("g5").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      }
+    }
+
+    function g6() {
+
+      document.getElementById("g6").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      }
+    }
+
+
+    function g7() {
+
+      document.getElementById("g7").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      }
+    }
+
+
+    function g8() {
+
+      document.getElementById("g8").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7 ){
+        display();
+      }
+    }
+
+    function g9() {
+
+      document.getElementById("g9").style.display = "none";
+      counter++;
+      d.setAttribute("value", counter);
+      if (counter == 7) {
+        display();
+      }
+    }
+
+
+
+    // collect all the divs
+    var divs = document.getElementsByClassName('gift');
+    // get window width and height
+    var winWidth = window.innerWidth;
+    var winHeight = window.innerHeight;
+
+    // i stands for "index". you could also call this banana or haircut. it's a variable
+    for (var i = 0; i < divs.length; i++) {
+
+      // shortcut! the current div in the list
+      var thisDiv = divs[i];
+
+      // get random numbers for each element
+      randomTop = getRandomNumber(0, winHeight);
+      randomLeft = getRandomNumber(0, winWidth);
+
+      // update top and left position
+      thisDiv.style.top = randomTop + "px";
+      thisDiv.style.left = randomLeft + "px";
+
+    }
+
+    // function that returns a random number between a min and max
+    function getRandomNumber(min, max) {
+
+      return Math.random() * (max - min) + min;
+
+    }
+
+    function update(e) {
+      var x = e.clientX || e.touches[0].clientX
+      var y = e.clientY || e.touches[0].clientY
+
+      document.documentElement.style.setProperty('--cursorX', x + 'px')
+      document.documentElement.style.setProperty('--cursorY', y + 'px')
+    }
+
+    document.addEventListener('mousemove', update)
+    document.addEventListener('touchmove', update)
+
+
+
+
+  </script>
+
+</body>
+
+</html>
